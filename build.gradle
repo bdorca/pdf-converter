@@ -1,0 +1,26 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'java'
+    id 'application'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClassName = 'com.example.pdf.Main'
+}
+
+
+dependencies {
+    shadow localGroovy()
+    shadow gradleApi()
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "com.artofsolving:jodconverter:2.2.1"
+    compile "org.slf4j:log4j-over-slf4j:1.7.21"
+    compile 'org.slf4j:slf4j-simple:1.7.21'
+}
